@@ -20,12 +20,12 @@ function drawIt(path){
 
     // List of image URLs
       imageUrls = [
-      "/tiles/"+config[0]+".png",
-      "/tiles/"+config[1]+".png",
-      "/tiles/"+config[2]+".png",
-      "/tiles/"+config[3]+".png",
-      "/tiles/"+config[4]+".png",
-      "/tiles/"+config[5]+".png",
+      "tiles/"+config[0]+".png",
+      "tiles/"+config[1]+".png",
+      "tiles/"+config[2]+".png",
+      "tiles/"+config[3]+".png",
+      "tiles/"+config[4]+".png",
+      "tiles/"+config[5]+".png",
     ];
 
     loadImages();
