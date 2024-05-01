@@ -2,12 +2,12 @@
 Cryptid Web App
 
 hover over tile  gives tooltip
-link to rulebook
+link to rulebook   mukhathu
 legend
 implement rules
 user stats:
 	login
-	signup  Mukhathutsheli
+	signup  
 	change password
 	actual player history(database)
 
