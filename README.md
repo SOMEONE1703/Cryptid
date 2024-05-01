@@ -15,7 +15,7 @@ user stats:
 
 *board continuation thups
 pages - ritanzwe and kanizo
-routing for pages - Siphelele 
+routing for pages - Siphelele --done
 setup sockets - Siphelele
 
 implement rules
