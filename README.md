@@ -2,7 +2,7 @@
 Cryptid Web App
 
 hover over tile  gives tooltip
-link to rulebook
+link to rulebook Thups
 legend
 implement rules
 user stats:
