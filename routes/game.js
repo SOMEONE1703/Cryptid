@@ -1,10 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-
-//handle game setup 
 router.get('/', function(req, res, next) {
-  const filePath = path.join(__dirname, "../public/index.html");
+  const filePath = path.join(__dirname, "../public/game.html");
   res.sendFile(filePath);
 });
 
