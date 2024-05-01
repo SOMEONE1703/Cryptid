@@ -21,7 +21,7 @@ router.get('/forgot', function(req, res, next) {
 });
 
 //renaming allowed
-router.get('/changepassword', function(req, res, next) {
+router.get('/change-password', function(req, res, next) {
   const filePath = path.join(__dirname, "../public/change_pass.html");
   res.sendFile(filePath);
 });
