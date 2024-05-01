@@ -66,3 +66,25 @@ document.addEventListener("DOMContentLoaded", function() {
         if(getText.length) drawIt2(getText);
     });
 });
+
+document.getElementById("legendImg").addEventListener("click", function() {
+    openModal("tiles/legend.png");
+  });
+  
+  document.getElementById("rulesImg").addEventListener("click", function() {
+    openModal("tiles/refrules.png");
+  });
+  
+  document.getElementById("closeModal").addEventListener("click", function() {
+    closeModal();
+  });
+  
+  function openModal(imageSrc) {
+    document.getElementById("modalImg").src = imageSrc;
+    document.getElementById("modal").style.display = "block";
+  }
+  
+  function closeModal() {
+    document.getElementById("modal").style.display = "none";
+  }
+  
