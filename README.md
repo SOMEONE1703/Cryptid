@@ -7,7 +7,7 @@ legend
 implement rules
 user stats:
 	login
-	signup
+	signup  Mukhathutsheli
 	change password
 	actual player history(database)
 
