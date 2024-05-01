@@ -1,17 +1,22 @@
 # Cryptid
 Cryptid Web App
 
-hover over tile  gives tooltip
-link to rulebook   mukhathu
-legend
-implement rules
+
+index massamba
+continuous deployment massamba
+*hover over tile  gives tooltip - massamba
+*link to rulebook - Thups
+legend - thups
+theory Mukhathutsheli and kananelo
 user stats:
-	login
-	signup  
-	change password
-	actual player history(database)
+	*login - massamba
+	*signup - massamba
+	change password - Rit & massamba
+	actual player history(database) massamba
 
-board continuation
-pages
-routing for pages - Siphelele 
+*board continuation thups
+pages - ritanzwe and kanizo
+routing for pages - Siphelele --done
+setup sockets - Siphelele
 
+implement rules

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheets/play.css" />
+  </head>
+  <body>
+    <div id="buttons">
+      <button id="difficulty">intro</button>
+      <button id="number">0</button>
+      <div id="inputdiv">
+        <input
+          type="text"
+          id="custom"
+          placeholder="6Numbers&A_manWillDoTheRest"
+        />
+        <button id="customNumber"><b>Submit Custom</b></button>
+      </div>
+    </div>
+
+    <section>
+      <article>
+        <h2>Legend</h2>
+        <div class="legend">
+          <ul>
+            <li><span style="background-color: #ff0000">1</span> Red</li>
+            <li><span style="background-color: #00ff00">2</span> Green</li>
+            <li><span style="background-color: #0000ff">3</span> Blue</li>
+            <!-- Add more legend items as needed -->
+          </ul>
+        </div>
+      </section>
+      <canvas id="myCanvas" width="600" height="600"> </canvas>
+      <article>
+        <h2>PDF Rules</h2>
+        <embed
+          src="rulebook/CRPT_Rulebook_for_WEB.pdf"
+          type="application/pdf"
+        />
+      </div>
+    </div>
+
+    <br />
+
+    <script src="javascripts/drawBoard.js"></script>
+    <script src="javascripts/getBoards.js"></script>
+    <script src="javascripts/buttons.js"></script>
+  </body>
+</html>
