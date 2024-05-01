@@ -1,17 +1,18 @@
 # Cryptid
 Cryptid Web App
 
-hover over tile  gives tooltip
-link to rulebook Thups
+hover over tile  gives tooltip - Thups
+link to rulebook - Thups
 legend
 implement rules
 user stats:
-	login
-	signup  Mukhathutsheli
-	change password
+	login - Mukhathutsheli
+	signup - Mukhathutsheli
+	change password - Rit
 	actual player history(database)
 
 board continuation
 pages
 routing for pages - Siphelele 
+design - Rit
 
