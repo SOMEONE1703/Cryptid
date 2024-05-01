@@ -3,42 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forget Password</title>
-    <style>
-
-        .form-group input {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .form-group button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .form-group button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="stylesheets/change_pass.css">
 </head>
 <body>
-    <div class="container">
+    <div class="login-container">
         <h2>Forget Password</h2>
-        <form action="#" method="post">
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+        <form action="#" method="POST">
+            <div class="input-group">
+                <input type="password" id="password" name="password" required placeholder="New-Password">
             </div>
-            <div class="form-group">
-                <button type="submit">Reset Password</button>
+            <div class="input-group">
+               
+                <input type="Confirm-password" id="Confirm-password" name="Confirm-password" required placeholder="Cornfirm password">
             </div>
+            <button type="submit">Login</button>
         </form>
     </div>
 </body>
