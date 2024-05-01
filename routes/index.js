@@ -1,9 +1,39 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+
+//handle game setup 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  const filePath = path.join(__dirname, "../public/index.html");
+  res.sendFile(filePath);
+});
+router.get('/home', function(req, res, next) {
+  const filePath = path.join(__dirname, "../public/home.html");
+  res.sendFile(filePath);
+});
+
+router.get('/custom-room', function(req, res, next) {
+  const filePath = path.join(__dirname, "../public/game_room.html");
+  res.sendFile(filePath);
+});
+router.get('/game-mode', function(req, res, next) {
+  const filePath = path.join(__dirname, "../public/game-mode.html");
+  res.sendFile(filePath);
+});
+
+router.get('/join-room', function(req, res, next) {
+  const filePath = path.join(__dirname, "../public/join_room.html");
+  res.sendFile(filePath);
+});
+
+router.get('/create-room', function(req, res, next) {
+  const filePath = path.join(__dirname, "../public/create-room.html");
+  res.sendFile(filePath);
+});
+
+router.get('/waiting', function(req, res, next) {
+  const filePath = path.join(__dirname, "../public/waiting.html");
+  res.sendFile(filePath);
 });
 
 module.exports = router;
