@@ -11,7 +11,8 @@ user stats:
 	change password
 	actual player history(database)
 
-board continuation
-pages
+board continuation- Mthups
+pages-Ritanzwe and Kananelo
 routing for pages - Siphelele 
+setup sockets - Siphelele
 
