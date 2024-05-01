@@ -11,7 +11,7 @@ user stats:
 	change password - Rit
 	actual player history(database)
 
-board continuation
+board continuation - Thups
 pages
 routing for pages - Siphelele 
 design - Rit
