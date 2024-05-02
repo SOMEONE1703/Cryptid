@@ -1,10 +1,14 @@
 body{
     display: flex;
     flex-direction: column;
-    padding: 100px;
+    padding: 50px 30px;
     height: 100vh;
     align-items: center;
-    background-color: black;
+    background-image: url('../tiles/tryback.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
 }
 
 #buttons{
@@ -14,7 +18,6 @@ body{
     justify-content: center;
     width: 100%;
     flex-wrap: nowrap;
-   
 }
 
 #custom, #customNumber {
@@ -31,10 +34,68 @@ body{
 #difficulty, #number, #customNumber{
     background-color: #3d7bb6;
     font-weight: bold;
-
 }
 
 #inputdiv{
     display: flex;
     flex-direction: column;
 }
+
+section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 50px;
+}
+
+#pdf{
+    height: 500px;
+}
+
+img{
+    width: 25vw;
+}
+
+#modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 4; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  }
+  
+  #modalImg {
+    margin: auto;
+    display: block;
+    width: 60%;
+  }
+  
+  #closeModal {
+    position: fixed;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 5;
+  }
+  
+  #closeModal:hover,
+  #closeModal:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  canvas{
+    padding: 0;
+  }
+  
