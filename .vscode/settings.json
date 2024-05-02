@@ -55,5 +55,7 @@
   "C_Cpp_Runner.useLeakSanitizer": false,
   "C_Cpp_Runner.showCompilationTime": false,
   "C_Cpp_Runner.useLinkTimeOptimization": false,
-  "C_Cpp_Runner.msvcSecureNoWarnings": false
+  "C_Cpp_Runner.msvcSecureNoWarnings": false,
+  "appService.defaultWebAppToDeploy": "/subscriptions/ded85ac5-f429-422d-8da2-93aed852c7b2/resourceGroups/knk-submission/providers/Microsoft.Web/sites/cryptid-2024",
+  "appService.deploySubpath": "."
 }
