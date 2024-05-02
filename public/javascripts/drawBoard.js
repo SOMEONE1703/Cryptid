@@ -185,8 +185,11 @@ function drawTower(imgUrl, r, c) {
         }
         img.src = imgUrl;
         img.onload = function () {
-          if(c%2==0) ctx.drawImage(img,  c *tcellSize.width+tcellSize.width/(6.0-(11-c)*0.15), r *tcellSize.height+tcellSize.height/(6.0-r*0.3), cellSize.width/9, cellSize.width/9);
-          else ctx.drawImage(img,  c *tcellSize.width+tcellSize.width/(6.0-(11-c)*0.15), 30+r *tcellSize.height+0.7*tcellSize.height/(6.0+r*r*r), cellSize.width/9, cellSize.width/9);
+          if(c%2==0 && c<9){
+             ctx.drawImage(img,  c *tcellSize.width+tcellSize.width/(6.0-(11-c)*0.15), r *tcellSize.height+tcellSize.height/(6.0-r*0.3), cellSize.width/9, cellSize.width/9);}
+          else{ 
+            if(r>1 && c>5)  ctx.drawImage(img,  c *tcellSize.width, 20+r *tcellSize.height, cellSize.width/9, cellSize.width/9);
+            else ctx.drawImage(img,  c *tcellSize.width+tcellSize.width/(6.0-(11-c)*0.15), 30+r *tcellSize.height+0.7*tcellSize.height/(6.0+r*r*r), cellSize.width/9, cellSize.width/9);}
         };
     }
     
@@ -198,8 +201,10 @@ function drawShack(imgUrl, r, c) {
         }
         img.src = imgUrl;
         img.onload = function () {
-            if(c%2==0 )ctx.drawImage(img,  c *tcellSize.width+tcellSize.width/(6.0-(11-c)*0.15), r *tcellSize.height+tcellSize.height/(6.0-r*0.3), cellSize.width/9, cellSize.width/9);
-            else ctx.drawImage(img, c *tcellSize.width+tcellSize.width/(6.0-(11-c)*0.15), 30+r *tcellSize.height+0.7*tcellSize.height/(6.0+r*r*r), cellSize.width/9, cellSize.width/9);
+            if(c%2==0 && c<9) ctx.drawImage(img,  c *tcellSize.width+tcellSize.width/(6.0-(11-c)*0.15), r *tcellSize.height+tcellSize.height/(6.0-r*0.3), cellSize.width/9, cellSize.width/9);
+            else {
+              if(r>1 && c>5) ctx.drawImage(img, c *tcellSize.width, 20+r *tcellSize.height, cellSize.width/9, cellSize.width/9);
+              else ctx.drawImage(img, c *tcellSize.width+tcellSize.width/(6.0-(11-c)*0.15), 30+r *tcellSize.height+0.7*tcellSize.height/(6.0+r*r*r), cellSize.width/9, cellSize.width/9);}
         };
     }
       // Call the function to load images
