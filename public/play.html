@@ -22,24 +22,19 @@
 
     <section>
       <article>
-        <h2>Legend</h2>
         <div class="legend">
-          <ul>
-            <li><span style="background-color: #ff0000">1</span> Red</li>
-            <li><span style="background-color: #00ff00">2</span> Green</li>
-            <li><span style="background-color: #0000ff">3</span> Blue</li>
-            <!-- Add more legend items as needed -->
-          </ul>
-        </div>
-      </section>
+          <img src="tiles/legend.png" alt="" id="legendImg">
+      </article>
+
       <canvas id="myCanvas" width="600" height="600"> </canvas>
-      <article>
-        <h2>PDF Rules</h2>
-        <embed
-          src="rulebook/CRPT_Rulebook_for_WEB.pdf"
-          type="application/pdf"
-        />
-      </div>
+      <article id="pdf">
+        <img src="tiles/refrules.png" alt="" id="rulesImg">
+      </article>
+    </section>
+
+    <div id="modal">
+      <img id="modalImg" src="" alt="">
+      <span id="closeModal">&times;</span>
     </div>
 
     <br />
