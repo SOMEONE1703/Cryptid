@@ -1,8 +1,7 @@
-let log=document.getElementById("Login");
-log.addEventListener("click",()=>{
-    window.location.href="/users/login"
-});
-let sign=document.getElementById("Login");
-sign.addEventListener("click",()=>{
-    window.location.href="/users/register"
-});
+function login(){
+    window.location.href="/users/login";
+}
+
+function sign(){
+    window.location.href="/users/register";
+}
