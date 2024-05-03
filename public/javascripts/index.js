@@ -1,4 +1,3 @@
-
 const loginButton = document.getElementById("Login");
 const SignUpButton = document.getElementById("SignUp");
 
