@@ -10,6 +10,7 @@ function drawIt(path){
      
       canvas = document.getElementById("myCanvas");
       ctx = canvas.getContext("2d");
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Define the grid layout
       gridSize = { rows: 3, cols: 2 };
@@ -27,7 +28,7 @@ function drawIt(path){
       "tiles/"+config[4]+".png",
       "tiles/"+config[5]+".png",
     ];
-
+    //any image
     loadImages();
   })
   .catch(error => console.error('Error fetching JSON:', error));
@@ -38,6 +39,7 @@ function drawIt2(str){
      
       canvas = document.getElementById("myCanvas");
       ctx = canvas.getContext("2d");
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Define the grid layout
       gridSize = { rows: 3, cols: 2 };
