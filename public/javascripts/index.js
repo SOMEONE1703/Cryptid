@@ -1,3 +1,4 @@
+
 const loginButton = document.getElementById("Login");
 const SignUpButton = document.getElementById("SignUp");
 
@@ -7,4 +8,4 @@ loginButton.addEventListener("click",()=>{
 
 SignUpButton.addEventListener("click",()=>{
     window.location.href = "/users/register";
-})
+});

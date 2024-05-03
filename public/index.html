@@ -11,6 +11,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./stylesheets/index.css" />
+    <script src="./javascripts/index.js"></script>
   </head>
   <body>
     <header class="d-flex m bg-light flex-wrap justify-content-between py-3">
@@ -67,6 +68,7 @@
             <div class="d-flex justify-content-center gap-3">
               <button
                 id="Login"
+                onclick="login()"
                 class="btn my-2 px-5 btn-secondary btn-lg"
                 type="button"
               >
@@ -74,6 +76,7 @@
               </button>
               <button
                 id="SignUp"
+                onclick="sign()"
                 class="btn my-2 px-5 btn-secondary btn-lg"
                 type="button"
               >
