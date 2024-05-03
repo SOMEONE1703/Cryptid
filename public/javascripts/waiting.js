@@ -1,4 +1,4 @@
-console.log("starting");
+console.log("Waiting scripts started succesfully");
 //const username=localStorage.getItem("cryptid-username");
 // const goal=localStorage.getItem("cryptid-goal");
 // const code=localStorage.getItem("cryptid-code");
