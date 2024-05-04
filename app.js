@@ -17,7 +17,7 @@ var server = require('http').Server(app);
 //var io = require('socket.io')(server);
 
 app.use(session({
-  secret:"Cryptid Web App ~ by Greatest Team!!!",
+  secret:"Cryptid Web App ~ by The Greatest Team!!!",
   resave: false,
   saveUninitialized:false,
   cookie:{
