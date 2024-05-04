@@ -8,6 +8,7 @@ router.get('/', function(req, res, next) {
   const filePath = path.join(__dirname, "../public/index.html");
   res.sendFile(filePath);
 });
+
 router.get('/home', function(req, res, next) {
   const filePath = path.join(__dirname, "../public/home.html");
   res.sendFile(filePath);
@@ -18,7 +19,7 @@ router.get('/custom-room', function(req, res, next) {
   res.sendFile(filePath);
 });
 router.get('/game-mode', function(req, res, next) {
-  const filePath = path.join(__dirname, "../public/game-mode.html");
+  const filePath = path.join(__dirname, "../public/game_mode.html");
   res.sendFile(filePath);
 });
 
@@ -28,7 +29,7 @@ router.get('/join-room', function(req, res, next) {
 });
 
 router.get('/create-room', function(req, res, next) {
-  const filePath = path.join(__dirname, "../public/create-room.html");
+  const filePath = path.join(__dirname, "../public/create_room.html");
   res.sendFile(filePath);
 });
 

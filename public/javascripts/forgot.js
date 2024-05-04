@@ -92,7 +92,6 @@ function change_password(e){
         else{
             window.location.href = "/users/home";
         }
-        console.log(res);
     })
     .catch((err)=>{
         console.log(err);
