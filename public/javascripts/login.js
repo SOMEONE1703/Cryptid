@@ -27,6 +27,9 @@ function LogIn(e){
         if(res.status!== 200){
             val1();
         }
+        else{
+            window.location.href = "/users/home";
+        }
     })
     .catch((err)=>{
         console.log(err);
@@ -68,11 +71,14 @@ function SignUp(e){
         }
     })
     .then((res)=>{
-        if(res.status === 200){
+        if(res.status === 409){
             alert(res.data.message);
         }
         if(res.status!== 201){
             val2();
+        }
+        else{
+            window.location.href = "/users/home";
         }
     })
     .catch((err)=>{

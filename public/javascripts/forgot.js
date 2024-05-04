@@ -7,7 +7,7 @@ frm_check_code.addEventListener("submit",Check_code);
 function Check_Email(e){
     e.preventDefault();
     const email = document.getElementById("email").value;
-    fetch('/users/forgot/email',{
+    fetch('/users/forgot',{
         method: "POST",
         body:JSON.stringify({
             email
@@ -25,8 +25,6 @@ function Check_Email(e){
             document.getElementById("uniqueCode").style.display = "block";
             document.getElementById("uniqueEmail").style.display = "none";
         }
-        document.getElementById("uniqueCode").style.display = "block";
-        document.getElementById("uniqueEmail").style.display = "none";
     })
     .catch((err)=>{
         console.log(err);
@@ -35,7 +33,7 @@ function Check_Email(e){
 function Check_code(e){
     e.preventDefault();
     const code = document.getElementById("code").value;
-    fetch('/users/forget/code',{
+    fetch('/users/forgot/code',{
         method: "POST",
         body:JSON.stringify({
             code
@@ -45,9 +43,10 @@ function Check_code(e){
         }
     })
     .then((res)=>{
-        if(res.status!== 200){
+        if(res.status!== 201){
+            console.log(res);
             val2();
-            alert("incorrect code");
+            alert("incorrect codenmnmnmn");
         }
         else{
             const che = document.getElementById("reg-log");
@@ -55,10 +54,6 @@ function Check_code(e){
             const frm_change_password = document.getElementById("newPassword");
             frm_change_password.addEventListener("submit",change_password);
         }
-        const che = document.getElementById("reg-log");
-        che.checked = true;
-        const frm_change_password = document.getElementById("newPassword");
-        frm_change_password.addEventListener("submit",change_password);
     })
     .catch((err)=>{
         console.log(err);
@@ -72,7 +67,6 @@ function val2(){
     document.getElementById("code").style.border = "2px solid red";
 }
 
-
 function change_password(e){
     e.preventDefault();
     const password = document.getElementById("newpass").value;
@@ -82,9 +76,8 @@ function change_password(e){
         alert("passwords not a match");
         return;
     }
-
-    fetch('/users/newpassword',{
-        method: "PUT",
+    fetch('/users/updatepassword',{
+        method: "PATCH",
         body:JSON.stringify({
             password
         }),
@@ -93,6 +86,12 @@ function change_password(e){
         }
     })
     .then((res)=>{
+        if(res.status >= 400){
+            window.location.href = "/";
+        }
+        else{
+            window.location.href = "/users/home";
+        }
         console.log(res);
     })
     .catch((err)=>{
