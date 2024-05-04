@@ -16,14 +16,14 @@ var app = express();
 var server = require('http').Server(app);
 //var io = require('socket.io')(server);
 
-// app.use(session({
-//   secret:"Cryptid Web App ~ by The Greatest Team!!!",
-//   resave: false,
-//   saveUninitialized:false,
-//   cookie:{
-//       maxAge: 6000 * 60
-//   }
-// }));
+app.use(session({
+  secret:"Cryptid Web App ~ by The Greatest Team!!!",
+  resave: false,
+  saveUninitialized:false,
+  cookie:{
+      maxAge: 6000 * 60
+  }
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

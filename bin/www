@@ -29,16 +29,16 @@ var server = http.createServer(app);
 const io = require('socket.io')(server);
 const dbpass = "Qwertyui1";
 const dbuser = "neyon71133";
-// mongoose.connect(`mongodb+srv://${dbuser}:${dbpass}@cluster0.zbdv8in.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`)
-//   .then(() => {
-    // console.log("db connected");
+mongoose.connect(`mongodb+srv://${dbuser}:${dbpass}@cluster0.zbdv8in.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`)
+  .then(() => {
+    console.log("db connected");
     server.listen(port);
     server.on('error', onError);
     server.on('listening', onListening);
-  // })
-  // .catch((err) => {
-  //   console.error("Error connecting to the database:", err);
-  // });
+  })
+  .catch((err) => {
+    console.error("Error connecting to the database:", err);
+  });
 
 
 /**
