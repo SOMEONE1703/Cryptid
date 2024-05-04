@@ -131,7 +131,6 @@ router.post('/forgot',async(req,res)=>{
 router.post('/forgot/code',async(req,res)=>{
   try{
     const {code} = req.body;
-    console.log("cooooooooooode");
     if(!req.session.code_user_id){
       return res.status(401).json({
         message:"Unauthorized"
