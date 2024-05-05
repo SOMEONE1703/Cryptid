@@ -9,6 +9,7 @@ var debug = require('debug')('cryptid:server');
 var http = require('http');
 
 const mongoose = require("mongoose");
+const io = require('socket.io')(server);
 
 /**
  * Get port from environment and store in Express.
@@ -26,7 +27,6 @@ var server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
-const io = require('socket.io')(server);
 const dbpass = "Qwertyui1";
 const dbuser = "neyon71133";
 mongoose.connect(`mongodb+srv://${dbuser}:${dbpass}@cluster0.zbdv8in.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`)
