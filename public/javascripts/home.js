@@ -3,5 +3,6 @@ function custom(){
     window.location.href="/custom-room";
 }
 function play(){
-    window.location.href="/game-mode"
+    sessionStorage.setItem("cryptid-game-action","play");
+    window.location.href="/game-mode";
 }
