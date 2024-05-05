@@ -1,12 +1,16 @@
 console.log("Waiting scripts started succesfully");
-//const username=localStorage.getItem("cryptid-username");
-// const goal=localStorage.getItem("cryptid-goal");
-// const code=localStorage.getItem("cryptid-code");
-// const mode=localStorage.getItem("cryptid-mode");
-const username="temporary";
-const goal="play";
-const code=0;
-const mode = "intro";
+const username=localStorage.getItem("cryptid-game-username");
+const goal=sessionStorage.getItem("cryptid-game-action");
+const code=sessionStorage.getItem("cryptid-game-room-number");
+const mode=sessionStorage.getItem("cryptid-game-mode");
+console.log(`Username:${username}`);
+console.log(`Goal:${goal}`);
+console.log(`Room number:${code}`);
+console.log(`Game mode:${mode}`);
+//const username="temporary";
+//const goal="play";
+//const code=0;
+//const mode = "intro";
 
 //set the username in players joined
 // Establish a connection to the server
@@ -21,9 +25,11 @@ socket.on("identity", (identity) => {
     }
     else if(goal=="join"){
         socket.emit("join",{username:username,code:code});
+        
     }
     else if(goal=="play"){
         socket.emit("play",{username:username,mode:mode});
+        document.getElementById("join_code").textContent="";
     }
 });
 
@@ -51,11 +57,13 @@ socket.on("newplayer",(data)=>{
 socket.on("found",(data)=>{
     console.log("found match");
     console.log(data);
+    document.getElementById("join_code").textContent=`Joining code: ${code}`;
     //display the array of players
 });
 
 socket.on("not-found",()=>{
     //invalid code, alert player
+    document.getElementById("join_code").textContent=`Joining code: Invalid`;
 });
 
 
