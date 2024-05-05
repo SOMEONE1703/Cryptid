@@ -49,7 +49,7 @@ socket.on("newplayer",(data)=>{
     console.log(data);
     let temp = document.getElementById("players");
     let p=document.createElement("p");
-    p.textContent="what";
+    p.textContent=data.name;
     temp.appendChild(p);
     console.log("appended");
 });
@@ -57,8 +57,10 @@ socket.on("newplayer",(data)=>{
 socket.on("found",(data)=>{
     console.log("found match");
     console.log(data);
-    document.getElementById("join_code").textContent=`Joining code: ${code}`;
     //display the array of players
+    if (goal=="join"){
+        document.getElementById("join_code").textContent=`Joining code: ${code}`;
+    }
 });
 
 socket.on("not-found",()=>{
