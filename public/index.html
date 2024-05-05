@@ -10,15 +10,15 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./stylesheets/index.css" />
-    <script src="./javascripts/index.js"></script>
+    <link rel="stylesheet" href="/stylesheets/index.css" />
+    <!-- <script src="/javascripts/index.js"></script> -->
   </head>
   <body>
-    <header class="d-flex bg-light flex-wrap justify-content-between py-3">
+    <header class="d-flex bg-light flex-wrap justify-content-between py-1">
       <img
         width="100px"
         class="px-3"
-        src="./images/logo.jpg"
+        src="/images/logo.jpg"
         alt="Cryptid_img"
       />
       <ul class="nav align-content-center px-2 nav-pills">
@@ -39,7 +39,7 @@
       class="p-5 text-bg-primary"
       style="
         position: relative;
-        background-image: url('./images/shadow.png');
+        background-image: url('/images/shadow.png');
         background-size: cover;
         background-position: center;
       "
@@ -66,22 +66,22 @@
               beast, but reveal too much and your name will be soon forgotten!
             </p>
             <div class="d-flex justify-content-center gap-3">
-              <button
+              <a
                 id="Login"
-                onclick="login()"
+                href="/users"
                 class="btn my-2 px-5 btn-secondary btn-lg"
                 type="button"
               >
-                Log In
-              </button>
-              <button
+                Play
+              </a>
+              <!-- <button
                 id="SignUp"
                 onclick="sign()"
                 class="btn my-2 px-5 btn-secondary btn-lg"
                 type="button"
               >
                 Sign Up
-              </button>
+              </button> -->
             </div>
           </div>
         </div>
@@ -95,7 +95,7 @@
                 <div class="col-md-6">
                     <p class="fs-4">You are all cryptozoologists, trying to be the first to discover definitive proof of a cryptid in the wilds of North America. Each player will be given a unique clue – one piece of crucial information about where the creature lives. When combined, the clues identify a single space on the map – the creature’s habitat. Each player’s clue either states an area where the creature can be found, or where it cannot be found, based on the terrain and structures on the board. During the game, you will ask each other questions with the aim of guessing each other’s clues. The first player to correctly use all of the clues to find the habitat wins the game.</p>
                 </div>
-                <img src="./images/Cryptid_Card.jpg" alt="Image" class="col-md-2 img-fluid" style="min-width: 20em;">
+                <img src="/images/Cryptid_Card.jpg" alt="Image" class="col-md-2 img-fluid" style="min-width: 20em;">
             </div>
         </div>
     </section>
@@ -109,7 +109,7 @@
           class="row d-flex flex-wrap justify-content-center align-items-center"
         >
           <img
-            src="./images/logo.jpg"
+            src="/images/logo.jpg"
             alt="Image"
             class="col-md-2 img-fluid"
             style="min-width: 20em"
@@ -121,7 +121,7 @@
               searches, or attempting to solve the mystery. The game ends when
               someone correctly identifies the cryptid's location. For detailed
               rules, check out the
-              <a href="rulebook/CRPT_Rulebook_for_WEB.pdf" target="_blank"
+              <a href="/rulebook/CRPT_Rulebook_for_WEB.pdf" target="_blank"
                 >Cryptid rulebook</a
               >. It's a thrilling game of deduction and strategy that keeps
               players engaged until the very end!
@@ -167,7 +167,7 @@
             </p>
           </div>
           <img
-            src="./images/board_and_cards.jpg"
+            src="/images/board_and_cards.jpg"
             alt="Image"
             class="col-md-2 img-fluid"
             style="min-width: 20em"
@@ -195,7 +195,7 @@
         <div class="row justify-content-lg-center">
           <div class="col-12 col-lg-9">
             <div class="bg-white border rounded shadow-sm overflow-hidden">
-              <form action="/user/sendemail">
+              <form action="/users/sendemail">
                 <div class="row gy-4 gy-xl-5 p-4 p-xl-5">
                   <div class="col-12">
                     <label for="fullname" class="form-label"
@@ -313,5 +313,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+
   </body>
 </html>
