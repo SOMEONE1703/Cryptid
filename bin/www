@@ -8,7 +8,7 @@ var app = require('../app');
 var debug = require('debug')('cryptid:server');
 var http = require('http');
 
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 
 /**
  * Get port from environment and store in Express.
