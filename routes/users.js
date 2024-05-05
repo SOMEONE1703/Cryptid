@@ -188,4 +188,9 @@ router.get('/home', function(req, res, next) {
   res.sendFile(filePath);
 });
 
+// /users/sendemail
+router.get('/sendemail', function(req, res, next) {
+  const filePath = path.join(__dirname, "../public/index.html");
+  res.sendFile(filePath);
+});
 module.exports = router;

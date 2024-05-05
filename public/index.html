@@ -11,7 +11,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/stylesheets/index.css" />
-    <script src="/javascripts/index.js"></script>
+    <!-- <script src="/javascripts/index.js"></script> -->
   </head>
   <body>
     <header class="d-flex bg-light flex-wrap justify-content-between py-1">
@@ -39,7 +39,7 @@
       class="p-5 text-bg-primary"
       style="
         position: relative;
-        background-image: url('./images/shadow.png');
+        background-image: url('/images/shadow.png');
         background-size: cover;
         background-position: center;
       "
@@ -66,14 +66,14 @@
               beast, but reveal too much and your name will be soon forgotten!
             </p>
             <div class="d-flex justify-content-center gap-3">
-              <button
+              <a
                 id="Login"
-                onclick="login()"
+                href="/users"
                 class="btn my-2 px-5 btn-secondary btn-lg"
                 type="button"
               >
                 Play
-              </button>
+              </a>
               <!-- <button
                 id="SignUp"
                 onclick="sign()"
@@ -195,7 +195,7 @@
         <div class="row justify-content-lg-center">
           <div class="col-12 col-lg-9">
             <div class="bg-white border rounded shadow-sm overflow-hidden">
-              <form action="/user/sendemail">
+              <form action="/users/sendemail">
                 <div class="row gy-4 gy-xl-5 p-4 p-xl-5">
                   <div class="col-12">
                     <label for="fullname" class="form-label"
@@ -313,5 +313,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+
   </body>
 </html>
