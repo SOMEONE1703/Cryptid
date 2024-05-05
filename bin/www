@@ -9,7 +9,7 @@ var debug = require('debug')('cryptid:server');
 var http = require('http');
 
 const mongoose = require("mongoose");
-const io = require('socket.io')(server);
+//const io = require('socket.io')(server);
 
 /**
  * Get port from environment and store in Express.
