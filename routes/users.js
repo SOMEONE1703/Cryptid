@@ -131,7 +131,6 @@ router.post('/forgot',async(req,res)=>{
 router.post('/forgot/code',async(req,res)=>{
   try{
     const {code} = req.body;
-    console.log("cooooooooooode");
     if(!req.session.code_user_id){
       return res.status(401).json({
         message:"Unauthorized"
@@ -189,4 +188,9 @@ router.get('/home', function(req, res, next) {
   res.sendFile(filePath);
 });
 
+// /users/sendemail
+router.get('/sendemail', function(req, res, next) {
+  const filePath = path.join(__dirname, "../public/index.html");
+  res.sendFile(filePath);
+});
 module.exports = router;

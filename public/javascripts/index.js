@@ -1,3 +1,3 @@
 function login(){
-    window.location.href="/users/login";
+    window.location.href="/users";
 }
