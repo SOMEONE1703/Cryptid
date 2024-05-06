@@ -68,7 +68,7 @@ socket.on("start-game",()=>{
 
 socket.on("newplayer",(data)=>{
     players++;
-    console.log("new new player");
+    console.log("new player");
     console.log(data);
     if (data.name==username){
         return;

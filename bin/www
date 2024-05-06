@@ -99,7 +99,7 @@ io.on('connection', (socket) => {
           temp.players.push(data.username);
           temp.mode=data.mode;
           lobbies.push(temp);
-          io.to(socket.id).emit("found",{data:"uhmm what",identity:lobby_id});
+          io.to(socket.id).emit("found",{data:"uhmm what",identity:temp.lobby_id});
           console.log("well what");
           //console.log(lobbies);
       }
