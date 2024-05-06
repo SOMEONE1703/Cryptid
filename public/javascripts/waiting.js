@@ -61,7 +61,7 @@ socket.on("start-game",()=>{
         console.log("clicked");
         setTimeout(()=>{
             window.location.href="/game";
-        },5000);
+        },4000);
     });
     document.body.appendChild(tem);
 });
