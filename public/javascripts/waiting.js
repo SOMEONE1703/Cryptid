@@ -14,6 +14,11 @@ console.log(`Game mode:${mode}`);
 
 //set the username in players joined
 // Establish a connection to the server
+let met =document.getElementById("myname");
+console.log(typeof met);
+console.log(met);
+console.log("what the fuck")
+met.textContent=username;
 const socket = io();
 let players=1;
 
@@ -47,6 +52,9 @@ socket.on("newplayer",(data)=>{
     players++;
     console.log("new new player");
     console.log(data);
+    if (data.name==username){
+        return;
+    }
     let temp = document.getElementById("players");
     let p=document.createElement("p");
     p.textContent=data.name;
@@ -54,15 +62,31 @@ socket.on("newplayer",(data)=>{
     console.log("appended");
 });
 
+socket.on("player_lost",(data)=>{
+    console.log(data);
+    let par=document.getElementById("players");
+    for (let i=par.children.length-1;i>=0;i--){
+        if (par.children[i].tagName=="P"&&par.children[i].textContent==data.username){
+            par.removeChild(par.children[i]);
+        }
+    }
+});
+
 socket.on("found",(data)=>{
     console.log("found match");
     console.log(data);
-    //display the array of players
     if (goal=="join"){
         document.getElementById("join_code").textContent=`Joining code: ${code}`;
     }
 });
-
+socket.on("others",(data)=>{
+    for (let i=0;i<data.others.length;i++){
+        if (data.others[i]==username){continue;}
+        let som=document.createElement("p");
+        som.textContent=data.others[i];
+        document.getElementById("players").appendChild(som);
+    }
+});
 socket.on("not-found",()=>{
     //invalid code, alert player
     document.getElementById("join_code").textContent=`Joining code: Invalid`;
