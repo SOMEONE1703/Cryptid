@@ -64,7 +64,6 @@ io.on('connection', (socket) => {
   //socket.emit("identity",{found:"found"});
   io.to(socket.id).emit("identity",{found:"found"});
   //check if it's a return
-  
   socket.on("create",(what)=>{
       let some = new lobby();
       some.players.push(what.username);
@@ -100,7 +99,7 @@ io.on('connection', (socket) => {
           temp.players.push(data.username);
           temp.mode=data.mode;
           lobbies.push(temp);
-          io.to(socket.id).emit("found",{data:"uhmm what"});
+          io.to(socket.id).emit("found",{data:"uhmm what",identity:lobby_id});
           console.log("well what");
           //console.log(lobbies);
       }
@@ -113,8 +112,8 @@ io.on('connection', (socket) => {
               console.log(`sending to ${lobbies[index].player_sockets[i]}`);
               io.to(lobbies[index].player_sockets[i]).emit("newplayer",{name:data.username});
           }
-          io.to(socket.id).emit("others",{others:lobbies[index].players});
-          if (lobbies[index].players.length == 5){
+          io.to(socket.id).emit("others",{identity:lobbies[index].lobby_id,others:lobbies[index].players});
+          if (lobbies[index].players.length == 3){
               //full, so start
               for (let i=0;i<lobbies[index].player_sockets.length;i++){
                   io.to(lobbies[index].player_sockets[i]).emit("start-game");

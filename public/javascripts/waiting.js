@@ -14,6 +14,15 @@ console.log(`Game mode:${mode}`);
 
 //set the username in players joined
 // Establish a connection to the server
+
+//send a matchid from server after creation
+//set goal to join
+//write to sessionstorage
+//switch to play
+//initialize io
+//reconnect to matchid
+//make sure the matchid search is gonna work for rejoining 
+
 let met =document.getElementById("myname");
 console.log(typeof met);
 console.log(met);
@@ -46,6 +55,15 @@ socket.on("create-res",(response)=>{
 
 socket.on("start-game",()=>{
     console.log("Let the games begin");
+    let tem=document.createElement("button");
+    tem.textContent="Start Game";
+    tem.addEventListener("click",()=>{
+        console.log("clicked");
+        setTimeout(()=>{
+            window.location.href="/game";
+        },5000);
+    });
+    document.body.appendChild(tem);
 });
 
 socket.on("newplayer",(data)=>{
