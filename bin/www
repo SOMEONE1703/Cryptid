@@ -48,7 +48,7 @@ mongoose.connect(`mongodb+srv://${dbuser}:${dbpass}@cluster0.zbdv8in.mongodb.net
 const custom_lobbies = [];
 const lobbies = [];
 const curr_ind=0;
-let curr_players=0;
+
 let next_custom=0;
 function lobby(){
   this.players=[];
@@ -63,6 +63,7 @@ io.on('connection', (socket) => {
   //socket.emit("new_player");
   //socket.emit("identity",{found:"found"});
   io.to(socket.id).emit("identity",{found:"found"});
+  //check if it's a return
   socket.on("create",(what)=>{
       let some = new lobby();
       some.players.push(what.username);
@@ -85,7 +86,7 @@ io.on('connection', (socket) => {
           for (let i=0;i<custom_lobbies[index].player_sockets.length;i++){
               io.to(custom_lobbies[index].player_sockets[i]).emit("new_player",{name:data.username});
           }
-          io.to(socket.id).emit("found",{others:custom_lobbies[index].players});
+          io.to(socket.id).emit("others",{others:custom_lobbies[index].players});
       }
   });
 
@@ -98,7 +99,7 @@ io.on('connection', (socket) => {
           temp.players.push(data.username);
           temp.mode=data.mode;
           lobbies.push(temp);
-          io.to(socket.id).emit("found",{data:"uhmm what"});
+          io.to(socket.id).emit("found",{data:"uhmm what",identity:temp.lobby_id});
           console.log("well what");
           //console.log(lobbies);
       }
@@ -111,8 +112,8 @@ io.on('connection', (socket) => {
               console.log(`sending to ${lobbies[index].player_sockets[i]}`);
               io.to(lobbies[index].player_sockets[i]).emit("newplayer",{name:data.username});
           }
-          io.to(socket.id).emit("found",{others:lobbies[index].players});
-          if (lobbies[index].players.length == 5){
+          io.to(socket.id).emit("others",{identity:lobbies[index].lobby_id,others:lobbies[index].players});
+          if (lobbies[index].players.length == 3){
               //full, so start
               for (let i=0;i<lobbies[index].player_sockets.length;i++){
                   io.to(lobbies[index].player_sockets[i]).emit("start-game");
@@ -124,7 +125,33 @@ io.on('connection', (socket) => {
   });
 
   socket.on('disconnect', () => {
-      console.log('User disconnected');
+      console.log(`user disconnected:${socket.id}`);
+      for (let i=0;i<lobbies.length;i++){
+        for (let j=0;j<lobbies[i].player_sockets.length;j++){
+          if (lobbies[i].player_sockets[j]==socket.id){
+            let temp_name=lobbies[i].players[j];
+            lobbies[i].player_sockets.splice(j,1);
+            lobbies[i].players.splice(j,1);
+            for (let z=0;z<lobbies[i].player_sockets.length;z++){
+              io.to(lobbies[i].player_sockets[z]).emit("player_lost",{username:temp_name});
+            }
+          }
+
+        }
+      }
+      for (let i=0;i<custom_lobbies.length;i++){
+        for (let j=0;j<custom_lobbies[i].player_sockets.length;j++){
+          if (custom_lobbies[i].player_sockets[j]==socket.id){
+            let temp_name=custom_lobbies[i].players[j];
+            custom_lobbies[i].player_sockets.splice(j,1);
+            custom_lobbies[i].players.splice(j,1);
+            for (let z=0;z<custom_lobbies[i].player_sockets.length;z++){
+              io.to(custom_lobbies[i].player_sockets[z]).emit("player_lost",{username:temp_name});
+            }
+          }
+
+        }
+      }
   });
 });
 
