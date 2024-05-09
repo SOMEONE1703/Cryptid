@@ -119,23 +119,23 @@ function loadImages() {
             if (index == 2 || index == 3) {
               ctx.drawImage(
                 img,
-                col * cellSize.width - (index % 2 == 0 ? 0 : 12),
-                row * cellSize.height - 25,
+                col * cellSize.width - (index % 2 == 0 ? 0 : 14),
+                row * cellSize.height - 28,
                 cellSize.width,
                 cellSize.height
               );
             } else if (index == 4 || index == 5) {
               ctx.drawImage(
                 img,
-                col * cellSize.width - (index % 2 == 0 ? 0 : 12),
-                row * cellSize.height - 50,
+                col * cellSize.width - (index % 2 == 0 ? 0 : 14),
+                row * cellSize.height - 56,
                 cellSize.width,
                 cellSize.height
               );
             } else {
               ctx.drawImage(
                 img,
-                col * cellSize.width - (index % 2 == 0 ? 0 : 12),
+                col * cellSize.width - (index % 2 == 0 ? 0 : 14),
                 row * cellSize.height,
                 cellSize.width,
                 cellSize.height
@@ -144,7 +144,8 @@ function loadImages() {
 
             imagesLoaded++;
             if (imagesLoaded === imageUrls.length) {
-              console.log("i passed")
+              console.log("i passed");
+              setUp();
               drawTowersAndShacks();
             console.log("now i'm here")}
           };
@@ -180,36 +181,65 @@ function drawTowersAndShacks() {
     }
     
 function drawTower(imgUrl, r, c) {
-        var img = new Image();
-        var tcellSize={
-          width: (canvas.width-12)/12,
-          height: c%2==0? (canvas.height-80)/9:(canvas.height-50)/9 
+  var img = new Image();
+    img.src = imgUrl;
+    img.style.width="27px";
+    img.style.height="27px";
+    img.onload = function () {
+        // Construct the class name of the cell
+        var cellClass = `${r},${c}`;
+        // Find all cells with the specified class
+        var cells = document.getElementsByClassName(cellClass);
+        // Iterate over all found cells (in case there are multiple cells with the same class)
+        for (var i = 0; i < cells.length; i++) {
+            var cell = cells[i];
+            // Append the tower image to each found cell
+            cell.appendChild(img);
         }
-        img.src = imgUrl;
-        img.onload = function () {
-          if(c%2==0 && c<9){
-             ctx.drawImage(img,  c *tcellSize.width+tcellSize.width/(6.0-(11-c)*0.15), r *tcellSize.height+tcellSize.height/(6.0-r*0.3), cellSize.width/9, cellSize.width/9);}
-          else{ 
-            if(r>1 && c>5)  ctx.drawImage(img,  c *tcellSize.width, 20+r *tcellSize.height, cellSize.width/9, cellSize.width/9);
-            else ctx.drawImage(img,  c *tcellSize.width+tcellSize.width/(6.0-(11-c)*0.15), 30+r *tcellSize.height+0.7*tcellSize.height/(6.0+r*r*r), cellSize.width/9, cellSize.width/9);}
-        };
-    }
+    };
+}
     
 function drawShack(imgUrl, r, c) {
-        var img = new Image();
-        var tcellSize={
-          width:  (canvas.width-12)/12,
-          height: c%2==0? (canvas.height-80)/9:(canvas.height-50)/9 
+  var img = new Image();
+    img.src = imgUrl;
+    img.style.width="27px";
+    img.style.height="27px";
+    img.onload = function () {
+        // Construct the class name of the cell
+        var cellClass = `${r},${c}`;
+        // Find all cells with the specified class
+        var cells = document.getElementsByClassName(cellClass);
+        // Iterate over all found cells (in case there are multiple cells with the same class)
+        for (var i = 0; i < cells.length; i++) {
+            var cell = cells[i];
+            // Append the tower image to each found cell
+            cell.appendChild(img);
         }
-        img.src = imgUrl;
-        img.onload = function () {
-            if(c%2==0 && c<9) ctx.drawImage(img,  c *tcellSize.width+tcellSize.width/(6.0-(11-c)*0.15), r *tcellSize.height+tcellSize.height/(6.0-r*0.3), cellSize.width/9, cellSize.width/9);
-            else {
-              if(r>1 && c>5) ctx.drawImage(img, c *tcellSize.width, 20+r *tcellSize.height, cellSize.width/9, cellSize.width/9);
-              else ctx.drawImage(img, c *tcellSize.width+tcellSize.width/(6.0-(11-c)*0.15), 30+r *tcellSize.height+0.7*tcellSize.height/(6.0+r*r*r), cellSize.width/9, cellSize.width/9);}
-        };
-    }
+    };
+}
       // Call the function to load images
 
-      
+// Add this code after defining the canvas and context variables
+
+function setUp(){
+  const box = document.getElementById("box");
+
+  for(let col = 0; col < 12; col++){
+    const column = document.createElement("div");
+    column.classList.add("column");
+    if(Number(col + 1) % 2 == 0){
+      column.classList.add("cdown-2");
+    }
+    for(let row = 0; row < 9; row++){
+      const cell = document.createElement("div");
+      cell.classList.add("cell");
+      cell.classList.add(`${row},${col}`);
+
+      //cell.addEventListener("click",interact);
+
+      column.appendChild(cell);
+    }
+    box.appendChild(column);
+  }
+}   
     
