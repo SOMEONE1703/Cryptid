@@ -18,6 +18,7 @@ router.get('/custom-room', function(req, res, next) {
   const filePath = path.join(__dirname, "../public/game_room.html");
   res.sendFile(filePath);
 });
+
 router.get('/game-mode', function(req, res, next) {
   const filePath = path.join(__dirname, "../public/game_mode.html");
   res.sendFile(filePath);
@@ -30,6 +31,10 @@ router.get('/join-room', function(req, res, next) {
 
 router.get('/create-room', function(req, res, next) {
   const filePath = path.join(__dirname, "../public/create_room.html");
+  res.sendFile(filePath);
+});
+router.get('/browse-rooms', function(req, res, next) {
+  const filePath = path.join(__dirname, "../public/browse_room.html");
   res.sendFile(filePath);
 });
 
