@@ -2,15 +2,15 @@
 Cryptid Web App
 
 
-index massamba
-continuous deployment massamba
+index massamba -done
+continuous deployment massamba -done
 *hover over tile  gives tooltip - massamba
-*link to rulebook - Thups
-legend - thups
+*link to rulebook - Thups - done
+legend - thups - done
 theory Mukhathutsheli and kananelo
 user stats:
-	*login - massamba
-	*signup - massamba
+	*login - massamba - done
+	*signup - massamba - done
 	change password - Rit & massamba
 	actual player history(database) massamba
 
