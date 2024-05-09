@@ -1,101 +1,157 @@
-body{
-    display: flex;
-    flex-direction: column;
-    padding: 50px 30px;
-    height: 100vh;
-    align-items: center;
-    background-image: url('../tiles/tryback.png');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    overflow: hidden;
+body {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 30px;
+  height: 100vh;
+  align-items: center;
+  background-image: url("../tiles/tryback.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
 }
 
-#buttons{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    flex-wrap: nowrap;
+#buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: nowrap;
 }
 
-#custom, #customNumber {
-   height: 25px; 
+#custom,
+#customNumber {
+  height: 25px;
 }
 
-
-#difficulty, #number, #inputdiv{
-    width: 210px;
-    height: 50px;
-    font-weight: bold;
+#difficulty,
+#number,
+#inputdiv {
+  width: 210px;
+  height: 50px;
+  font-weight: bold;
 }
 
-#difficulty, #number, #customNumber{
-    background-color: #3d7bb6;
-    font-weight: bold;
+#difficulty,
+#number,
+#customNumber {
+  background-color: #3d7bb6;
+  font-weight: bold;
 }
 
-#inputdiv{
-    display: flex;
-    flex-direction: column;
+#inputdiv {
+  display: flex;
+  flex-direction: column;
 }
 
-section{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    width: 100%;
-    margin-top: 50px;
+section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 50px;
 }
 
-#pdf{
-    height: 500px;
+#pdf {
+  height: 500px;
 }
 
-img{
-    width: 25vw;
+img {
+  width: 25vw;
 }
 
 #modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 4; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-  }
-  
-  #modalImg {
-    margin: auto;
-    display: block;
-    width: 60%;
-  }
-  
-  #closeModal {
-    position: fixed;
-    top: 15px;
-    right: 35px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 5;
-  }
-  
-  #closeModal:hover,
-  #closeModal:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-  }
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 4; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+}
 
-  canvas{
-    padding: 0;
-  }
+#modalImg {
+  margin: auto;
+  display: block;
+  width: 60%;
+}
+
+#closeModal {
+  position: fixed;
+  top: 15px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 5;
+}
+
+#closeModal:hover,
+#closeModal:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+canvas {
+  padding: 0;
+}
+
+.large {
+  position: relative;
+  height: 600px;
+  width: 600px;
+}
+
+#box {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  width: 586;
+  height: 100%;
+}
+
+.column {
+  width: 60px;
+  height: 550px;
+  margin-right: -12.4px;
+  background-color: transparent;
+}
+
+.cdown-2 {
+  position: relative;
+  bottom: -1.8em;
+}
+
+.cell {
+  border: 0.5px solid;
+  width: 60px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(128, 128, 128, 0.7);
+  clip-path: polygon(0% 50%, 25% 100%, 75% 100%, 100% 50%, 75% 0%, 25% 0%); /* Rotated hexagon */
   
+}
+
+.blur {
+  background-color: rgba(20, 9, 107, 0.9);
+  border-radius: 2em;
+}
+
+.cell img {
+  width: 100%;
+  height: 100%;
+}
+
+.cell:hover{
+  background-color: red;
+}
