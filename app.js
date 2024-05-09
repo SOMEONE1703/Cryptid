@@ -13,7 +13,7 @@ var gameRouter = require('./routes/game');
 
 var app = express();
 
-var server = require('http').Server(app);
+// var server = require('http').Server(app);
 //var io = require('socket.io')(server);
 
 app.use(session({
