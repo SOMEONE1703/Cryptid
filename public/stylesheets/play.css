@@ -4,10 +4,7 @@ body {
   padding: 50px 30px;
   height: 100vh;
   align-items: center;
-  background-image: url("../tiles/tryback.png");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-color: #efd29f;
   overflow: hidden;
 }
 
@@ -133,25 +130,49 @@ canvas {
 .cell {
   border: 0.5px solid;
   width: 60px;
-  height: 55px;
+  height: 55.7px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(128, 128, 128, 0.7);
   clip-path: polygon(0% 50%, 25% 100%, 75% 100%, 100% 50%, 75% 0%, 25% 0%); /* Rotated hexagon */
-  
+  flex-wrap: wrap;
 }
 
-.blur {
-  background-color: rgba(20, 9, 107, 0.9);
-  border-radius: 2em;
+.cell div{
+  border: 1px solid black;
 }
 
-.cell img {
-  width: 100%;
-  height: 100%;
+
+
+.turns{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
 }
 
-.cell:hover{
-  background-color: red;
+.color{
+  width: 15%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.red{
+  border: 2px solid red;
+}
+
+.green{
+  border: 2px solid green;
+}
+
+.orange{
+  border: 2px solid orange;
+}
+
+.blue{
+  border: 2px solid blue;
+}
+
+.purple{
+  border: 2px solid purple;
 }
