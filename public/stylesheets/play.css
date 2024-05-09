@@ -2,7 +2,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 50px 30px;
-  height: 100vh;
+  /* height: 100vh; */    /* seems okay */
   align-items: center;
   background-color: #efd29f;
   overflow: hidden;
@@ -48,7 +48,7 @@ section {
   flex-wrap: nowrap;
   justify-content: space-between;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 1em;  /*from 50px*/
 }
 
 #pdf {
@@ -56,7 +56,7 @@ section {
 }
 
 img {
-  width: 25vw;
+  width: 24vw;
 }
 
 #modal {
