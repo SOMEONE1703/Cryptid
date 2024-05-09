@@ -1,10 +1,9 @@
+//These are the buttons in play.html, whhich will be removed when the pages leading to play.html work
 var currentText='intro';
 var currentNumber = '0';
 var getText = '0';
 
-
 //console.log(getAllJsons(currentText));
-
 
 async function initialize() {
     try {
