@@ -2,7 +2,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 50px 30px;
-  height: 100vh;
+  /* height: 100vh; */    /* seems okay */
   align-items: center;
   background-color: #efd29f;
   overflow: hidden;
@@ -52,6 +52,7 @@ section {
   width: 100%;
   margin-top: 50px;
   align-items: center;
+
 }
 
 #pdf {
@@ -59,7 +60,7 @@ section {
 }
 
 img {
-  width: 25vw;
+  width: 24vw;
 }
 
 #modal {
