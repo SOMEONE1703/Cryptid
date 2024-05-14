@@ -5,6 +5,7 @@ var mapCodeValue = 0,
   gridSize,
   cellSize,
   imageUrls;
+var ask=false;
 
 function drawIt(path) {
   fetch(path)
@@ -261,12 +262,13 @@ function hover(cell) {
     // Set background color with RGBA (red, green, blue, alpha) values only on hover
     // Example RGBA color (light blue with 50% opacity)
     var classesArray = Array.from(cell.classList);
+    if(ask!=true){
     if(classesArray.includes("neg")) this.style.backgroundColor = "rgba(255, 0, 0, 0.4)";
-    else  this.style.backgroundColor = "rgba(0, 255, 0, 0.4)";
+    else  this.style.backgroundColor = "rgba(0, 255, 0, 0.4)";}
   });
 
   cell.addEventListener("mouseleave", function () {
     // Reset background color when mouse leaves
-    this.style.backgroundColor = "rgba(128, 128, 128, 0)"; // Restore initial background color on mouse leave
+    if(ask!=true) this.style.backgroundColor = "rgba(128, 128, 128, 0)"; // Restore initial background color on mouse leave
   });
 }

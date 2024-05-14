@@ -20,6 +20,7 @@ body {
 #custom,
 #customNumber {
   height: 25px;
+  visibility: hidden;
 }
 
 #difficulty,
@@ -28,6 +29,7 @@ body {
   width: 210px;
   height: 50px;
   font-weight: bold;
+  visibility: hidden;
 }
 
 #difficulty,
@@ -48,7 +50,9 @@ section {
   flex-wrap: nowrap;
   justify-content: space-between;
   width: 100%;
-  margin-top: 1em;  /*from 50px*/
+  margin-top: 50px;
+  align-items: center;
+
 }
 
 #pdf {
@@ -148,7 +152,7 @@ canvas {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .color{
