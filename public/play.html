@@ -7,21 +7,7 @@
     <link rel="stylesheet" href="stylesheets/play.css" />
   </head>
   <body>
-    <div id="buttons">
-      <button id="search" onclick="search()">Search</button>
-      <button id="yes" onclick="yes()">Yes</button>
-      <button id="no" onclick="no()">No</button>
-      <button id="difficulty">intro</button>
-      <button id="number">0</button>
-      <div id="inputdiv">
-        <input
-          type="text"
-          id="custom"
-          placeholder="6Numbers&A_manWillDoTheRest"
-        />
-        <button id="customNumber"><b>Submit Custom</b></button>
-      </div>
-    </div>
+   
 
     <section>
       <article>
@@ -33,22 +19,34 @@
             <div class="color blue"></div>
             <div class="color purple"></div>
           </div>
-          <img src="tiles/legend.png" alt="" id="legendImg">
+          <button id="rules">Quick Reference Rules</button>
+          <p id="errorLog">#This logs errors</p>
+          <div id="ruleButtons">
+          </div>
+          
          
       </article>
 
-      <div class="large">
-        <div id="box"></div>
-        <canvas id="myCanvas" width="600" height="600"> </canvas>
-      </div>
+      <article>
+        <div class="large">
+          <div id="box"></div>
+          <canvas id="myCanvas" width="600" height="600"> </canvas>
+        </div>
+      </article>
+      
      
       
       <article id="pdf">
-        <img src="tiles/refrules.png" alt="" id="rulesImg">
+        <img src="tiles/legend.png" alt="" id="legendImg">
+        <!-- <img src="tiles/refrules.png" alt="" id="rulesImg"> -->
       </article>
     </section>
 
-    
+    <div id="buttons">
+      <!-- <button id="search" onclick="search()">Search</button>
+      <button id="yes" onclick="yes()">Yes</button>
+      <button id="no" onclick="no()">No</button> -->
+    </div>
 
     <div id="modal">
       <img id="modalImg" src="" alt="">

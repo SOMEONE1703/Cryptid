@@ -50,6 +50,7 @@ function cellClicked(cellClass) {
       cell.classList.add("askedCell");
       posOfAskedCell = cellClass;
       ask = true;
+      load_question_options();
     }
   }
 }
@@ -77,21 +78,20 @@ function yes() {
       .querySelectorAll(".color")
       .forEach((d) => (d.style.backgroundColor = ""));
     processTurn();
-  } else if (
-    searching == true &&
-    !classesArray.includes("neg")
-  ) {
-    if(!classesArray.includes("c"+turnList[turn])){
-    shapeDiv = createPiece("circle", turn);
-    console.log(turn + "vs" + temporaryTurn);
-    cell.classList.add("c" + turnList[turn]);
-    cell.classList.add("p" + turnList[turn]);
-    cell.appendChild(shapeDiv);
-    document
-      .querySelectorAll(".color")
-      .forEach((d) => (d.style.backgroundColor = ""));
-    processTurn();
-  } else{processTurn();}
+  } else if (searching == true && !classesArray.includes("neg")) {
+    if (!classesArray.includes("c" + turnList[turn])) {
+      shapeDiv = createPiece("circle", turn);
+      console.log(turn + "vs" + temporaryTurn);
+      cell.classList.add("c" + turnList[turn]);
+      cell.classList.add("p" + turnList[turn]);
+      cell.appendChild(shapeDiv);
+      document
+        .querySelectorAll(".color")
+        .forEach((d) => (d.style.backgroundColor = ""));
+      processTurn();
+    } else {
+      processTurn();
+    }
   }
 }
 
@@ -102,7 +102,7 @@ function no() {
   var classesArray = Array.from(cell.classList);
   var shapeDiv = createPiece("square", temporaryTurn);
   var classToAdd = turnList[temporaryTurn];
-  if(searching==true) classToAdd=turnList[turn];
+  if (searching == true) classToAdd = turnList[turn];
   if (
     !classesArray.includes("c" + classToAdd) &&
     !classesArray.includes("neg") &&
@@ -130,8 +130,8 @@ function no() {
 
 function createPiece(shape, turn) {
   var shapeDiv = document.createElement("div");
-  shapeDiv.style.width = "15px"; // Adjust width as needed
-  shapeDiv.style.height = "15px"; // Adjust height as needed
+  shapeDiv.style.width = "20%"; // Adjust width as needed
+  shapeDiv.style.aspectRatio = "1/1"; // Adjust height as needed
   shapeDiv.style.backgroundColor = turnList[turn];
   if (shape == "square") {
     shapeDiv.classList.add("square");
@@ -165,21 +165,92 @@ function search() {
     var classesArray = Array.from(cell.classList);
     var shapeDiv = createPiece("circle", turn);
     var classToAdd = turnList[turn];
-    if (
-      !classesArray.includes("neg")
-    ) {
-      if(!classesArray.includes("c" + classToAdd)){
-      console.log(turn + "vs" + turn);
-      cell.classList.add("c" + turnList[turn]);
-      cell.classList.add("p" + turnList[turn]);
-      cell.appendChild(shapeDiv);
-      //cell.style.backgroundColor = "#80808000";
-      //ask = false;
-      document
-        .querySelectorAll(".color")
-        .forEach((d) => (d.style.backgroundColor = ""));}
+    if (!classesArray.includes("neg")) {
+      if (!classesArray.includes("c" + classToAdd)) {
+        console.log(turn + "vs" + turn);
+        cell.classList.add("c" + turnList[turn]);
+        cell.classList.add("p" + turnList[turn]);
+        cell.appendChild(shapeDiv);
+        //cell.style.backgroundColor = "#80808000";
+        //ask = false;
+        document
+          .querySelectorAll(".color")
+          .forEach((d) => (d.style.backgroundColor = ""));
+      }
       processTurn();
       searching = true;
     }
+  }
+}
+
+function load_possible_actions() {
+  let one = document.createElement("button");
+  one.className = "actions";
+  one.textContent = "Question";
+  one.addEventListener("click", () => {
+    console.log("Questioning");
+    bq = turn;
+    questioning = true;
+    question_mark(uhm);
+    load_question_options();
+  });
+
+  let two = document.createElement("span");
+  two.style.width = "10px";
+
+  let three = document.createElement("button");
+  three.className = "actions";
+  three.textContent = "Search";
+  three.addEventListener("click", () => {
+    console.log("Searching");
+    bq = turn;
+    searcher = turnList[turn];
+    search_turn = turn;
+    search_count = 0;
+    searching = true;
+    search_mark(uhm);
+    start_search();
+    process_search_turn();
+  });
+
+  let four = document.getElementById("buttons");
+  four.replaceChildren();
+  four.appendChild(one);
+  four.appendChild(two);
+  four.appendChild(three);
+}
+
+function load_question_options() {
+  let one = document.createElement("div");
+  one.className = "circs";
+  one.textContent = "Search";
+  one.addEventListener("click", () => {
+    console.log("Questioning");
+    bq = turn;
+    questioning = true;
+    question_mark(uhm);
+    load_question_options();
+  });
+
+  let h = document.getElementById("buttons");
+  h.replaceChildren();
+  h.appendChild(one);
+  for (let i = 0; i < turnList.length; i++) {
+    if (turnList[turn] == turnList[i]) {
+      continue;
+    }
+    let r = document.createElement("div");
+    r.className = "circs";
+    r.style.backgroundColor = turnList[i];
+    r.textContent = `Player${i + 1}`;
+    r.addEventListener("click", () => {
+      questioned = r.style.backgroundColor;
+      console.log(`${questioned}, questioned`);
+      document.getElementById("butts").replaceChildren();
+      load_possible_answers();
+      start_quest();
+    });
+
+    h.appendChild(r);
   }
 }
