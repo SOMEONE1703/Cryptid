@@ -186,8 +186,8 @@ function drawTowersAndShacks() {
 function drawTower(imgUrl, r, c) {
   var img = new Image();
   img.src = imgUrl;
-  img.style.width = "27px";
-  img.style.height = "27px";
+  img.style.width = "40%";
+  img.style.aspectRatio = "1/1";
   img.onload = function () {
     // Construct the class name of the cell
     var cellClass = `${r},${c}`;
@@ -205,8 +205,8 @@ function drawTower(imgUrl, r, c) {
 function drawShack(imgUrl, r, c) {
   var img = new Image();
   img.src = imgUrl;
-  img.style.width = "27px";
-  img.style.height = "27px";
+  img.style.width = "40%";
+  img.style.aspectRatio = "1/1";
   img.onload = function () {
     // Construct the class name of the cell
     var cellClass = `${r},${c}`;

@@ -1,6 +1,6 @@
 async function getAllJsons(pressed) {
     try {
-        const directoryPath = 'maps/'+pressed;
+        const directoryPath = 'maps/intro';
         const response = await fetch(directoryPath);
         
         if (!response.ok) {
